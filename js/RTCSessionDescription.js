@@ -10,4 +10,8 @@ function RTCSessionDescription(data) {
 	// Public atributes.
 	this.type = data.type;
 	this.sdp = data.sdp;
+
+  this.toJSON = function() {
+    return this;
+  }
 }
