@@ -1831,6 +1831,7 @@ function RTCIceCandidate(data) {
 	this.sdpMid = data.sdpMid;
 	this.sdpMLineIndex = data.sdpMLineIndex;
 	this.candidate = data.candidate;
+  this.toJSON = function() { return this; }
 
 	// Parse candidate SDP:
 	// Example: candidate:1829696681 1 udp 2122262783 2a01:cb05:8d3e:a300:e1ad:79c1:7096:8ba0 49778 typ host generation 0 ufrag c9L6 network-id 2 network-cost 10
@@ -2780,6 +2781,7 @@ function RTCSessionDescription(data) {
 	// Public atributes.
 	this.type = data.type;
 	this.sdp = data.sdp;
+  this.toJSON = function() { return this; }
 }
 
 },{}],18:[function(_dereq_,module,exports){
