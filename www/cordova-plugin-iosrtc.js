@@ -2353,7 +2353,7 @@ RTCPeerConnection.prototype.addTrack = function (track, stream) {
 	}
 
 	this.localTracks[track.id] = track;
-	
+
 	return new RTCRtpSender({
 		track: track
 	});
@@ -2395,7 +2395,7 @@ RTCPeerConnection.prototype.removeTrack = function (sender) {
 		for (id in this.localTracks) {
 			if (this.localTracks.hasOwnProperty(id)) {
 				if (track.id === id) {
-					exec(null, null, 'iosrtcPlugin', 'RTCPeerConnection_removeTrack', [this.pcId, track.id, null]);	
+					exec(null, null, 'iosrtcPlugin', 'RTCPeerConnection_removeTrack', [this.pcId, track.id, null]);
 					delete this.localTracks[track.id];
 				}
 			}
@@ -2736,7 +2736,7 @@ RTCRtpSender.prototype.replaceTrack = function (withTrack) {
 
 		// https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/negotiationneeded_event
 		var event = new Event('negotiationneeded');
-		pc.dispatchEvent('negotiationneeded', event);
+		pc.dispatchEvent(event);
 
 		pc.addEventListener("signalingstatechange", function listener() {
 			if (pc.signalingState === "closed") {
